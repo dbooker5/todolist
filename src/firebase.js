@@ -1,10 +1,13 @@
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
 const firebaseConfig = firebase.initializeApp ({
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "YOUR_DATABASE_URL",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+   apiKey: "AIzaSyDvKhM6FFVV5miKPNsloBloEB4uHI28IWk",
+  authDomain: "todolist-7f6f3.firebaseapp.com",
+  databaseURL: "https://todolist-7f6f3-default-rtdb.firebaseio.com",
+  projectId: "todolist-7f6f3",
+  storageBucket: "todolist-7f6f3.firebasestorage.app",
+  messagingSenderId: "945185918508",
+  appId: "1:945185918508:web:e1fbf1a6cbe1600be90b89"
 });
 export {firebaseConfig as firebase};
