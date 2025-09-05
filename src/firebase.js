@@ -1,13 +1,20 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
-const firebaseConfig = firebase.initializeApp ({
-   apiKey: "AIzaSyDvKhM6FFVV5miKPNsloBloEB4uHI28IWk",
-  authDomain: "todolist-7f6f3.firebaseapp.com",
-  databaseURL: "https://todolist-7f6f3-default-rtdb.firebaseio.com",
-  projectId: "todolist-7f6f3",
-  storageBucket: "todolist-7f6f3.firebasestorage.app",
-  messagingSenderId: "945185918508",
-  appId: "1:945185918508:web:e1fbf1a6cbe1600be90b89"
-});
-export {firebaseConfig as firebase};
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Firestore
+const db = getFirestore(app);
+
+export { app, db };
